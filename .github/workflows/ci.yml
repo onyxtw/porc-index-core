@@ -1,23 +1,27 @@
 name: PoRC Index Core CI/CD
 
 on:
-push:
-branches: [ "main", "master" ]
-tags: [ "v*" ]
-pull_request:
-branches: [ "main", "master" ]
+  push:
+    branches: [ "main", "master" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "main", "master" ]
 
 jobs:
-rust-test:
-name: Rust Core Build & Benchmark Verification
-runs-on: ubuntu-latest
-steps:
-- uses: actions/checkout@v4
-- name: Set up Rust toolchain
-uses: dtolnay/rust-toolchain@stable
-- name: Cargo Check
-run: cargo check --all-targets
-- name: Run Unit Tests
-run: cargo test
-- name: Run Lidao Tier-0 Benchmark Verification Example
-run: cargo run --example verify_lidao
+  rust-test:
+    name: Rust Core Build & Benchmark Verification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cargo Check
+        run: cargo check --all-targets
+
+      - name: Run Unit Tests
+        run: cargo test
+
+      - name: Run Lidao Tier-0 Benchmark Verification Example
+        run: cargo run --example verify_lidao
