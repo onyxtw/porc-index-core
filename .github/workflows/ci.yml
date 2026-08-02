@@ -12,7 +12,8 @@ jobs:
     name: Rust Core Build & Benchmark Verification
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4.2.2
 
       - name: Set up Rust toolchain
         uses: dtolnay/rust-toolchain@stable
