@@ -1,0 +1,24 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "porc-index"
+version = "0.1.0"
+description = "Python bindings for PoRC Index Core Evaluation Engine"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "ONYX Deep Tech Studio", email = "dev@porc-scs.org" }
+]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+]
+
+[tool.maturin]
+features = ["python"]
+python-source = "python"
+module-name = "porc_index._native"

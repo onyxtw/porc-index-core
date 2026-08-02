@@ -1,0 +1,26 @@
+[package]
+name = "porc-index-core"
+version = "0.1.0"
+edition = "2021"
+authors = ["ONYX Deep Tech Studio <dev@porc-scs.org>"]
+license = "MIT"
+description = "Official Reference Implementation for Physical-Origin Resilient Compute Sovereign Compute Standard (PoRC-SCS)"
+repository = "https://github.com/onyxtw/porc-index-core"
+readme = "README.md"
+
+[lib]
+name = "porc_index_core"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+pyo3 = { version = "0.20", features = ["extension-module"], optional = true }
+
+[features]
+default = []
+python = ["dep:pyo3"]
+
+[[example]]
+name = "verify_lidao"
+path = "examples/verify_lidao.rs"

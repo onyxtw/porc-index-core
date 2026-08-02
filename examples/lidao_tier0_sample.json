@@ -1,0 +1,32 @@
+{
+  "node_id": "ONYX-GLB-REORG-LIDAO-01",
+  "timestamp": "2026-08-02T10:22:15Z",
+  "facility_class_target": "Tier-0 Sovereign Class",
+  "telemetry": {
+    "compute": {
+      "flops_per_watt_effective": 1.25,
+      "flops_per_watt_baseline": 1.25,
+      "physical_distance_meters": 0.185,
+      "cfe_alignment_24_7_ratio": 0.982
+    },
+    "thermodynamic": {
+      "waste_heat_reused_watts": 68000.0,
+      "waste_heat_total_watts": 100000.0,
+      "hydrothermal_exergy_efficiency": 0.72,
+      "local_symbiosis_score": 0.85
+    },
+    "resilience": {
+      "offgrid_autonomy_hours": 720.0,
+      "disaster_compute_continuity_ratio": 0.85,
+      "comms_matrix": {
+        "mesh_coverage": 1.0,
+        "leo_satellite_link": 0.95,
+        "edge_ai_broadcast": 0.887
+      }
+    }
+  },
+  "flags": {
+    "has_fossil_backup": false,
+    "has_single_point_of_failure": false
+  }
+}
